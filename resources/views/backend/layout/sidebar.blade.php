@@ -6,10 +6,10 @@
         <!-- Logo -->
         <a class="fw-semibold text-white tracking-wide" href="index.html">
             <span class="smini-visible">
-            RS<span class="opacity-75">Cimed</span>
+            E-<span class="opacity-75">Recruitment</span>
             </span>
             <span class="smini-hidden">
-            RS Citra<span class="opacity-75"> Medika</span>
+            E-<span class="opacity-75">Recruitment</span>
             </span>
         </a>
         <!-- END Logo -->
@@ -56,22 +56,23 @@
                 </a>
             </li>
 
-            <li class="nav-main-heading">Reporting</li>
+            <li class="nav-main-heading">Recruitment</li>
             <li class="nav-main-item">
-                <a class="nav-main-link" href="{{ route('report.index') }}">
+                <a class="nav-main-link" href="{{ route('jobs.index') }}">
                     <i class="nav-main-link-icon fa fa-file-lines"></i>
-                    <span class="nav-main-link-name">Report</span>
+                    <span class="nav-main-link-name">Jobs</span>
+                </a>
+            </li>
+
+            <li class="nav-main-item">
+                <a class="nav-main-link" href="{{ route('penilaian.index') }}">
+                    <i class="nav-main-link-icon fa fa-address-card"></i>
+                    <span class="nav-main-link-name">Penilaian</span>
                 </a>
             </li>
 
             @if (auth()->user()->role == 'admin')
             <li class="nav-main-heading">Managament User</li>
-            <li class="nav-main-item">
-                <a class="nav-main-link" href="{{ route('divisi.index') }}">
-                    <i class="nav-main-link-icon fa fa-address-card"></i>
-                    <span class="nav-main-link-name">Divisi</span>
-                </a>
-            </li>
             <li class="nav-main-item">
                 <a class="nav-main-link" href="{{ route('user.index') }}">
                     <i class="nav-main-link-icon fa fa-user"></i>
