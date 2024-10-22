@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>RS Citra Medika</title>
+    <title>E-Recruitment</title>
 
-    <meta name="description" content="Rs Citra Medika">
+    <meta name="description" content="E-Recruitment">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Rs Citra Medika">
+    <meta property="og:title" content="E-Recruitment">
     <meta property="og:site_name" content="Dashmix">
-    <meta property="og:description" content="Rs Citra Medika">
+    <meta property="og:description" content="E-Recruitment">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
@@ -496,7 +496,7 @@
               Created by <a class="fw-semibold" href="https://www.linkedin.com/in/andika-eka-wardana-080680169/" target="_blank">Unknown <i class="fa fa-heart text-danger"></i></a>
             </div>
             <div class="col-sm-6 order-sm-1 text-center text-sm-start">
-              <a class="fw-semibold" href="#" target="_blank">Rs Citra Medika</a> &copy; <span data-toggle="year-copy"></span>
+              <a class="fw-semibold" href="#" target="_blank">E-Recruitment</a> &copy; <span data-toggle="year-copy"></span>
             </div>
           </div>
         </div>

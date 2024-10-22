@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Divisi;
+use App\Models\Jobs;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
-class DivisiController extends Controller
+class JobsController extends Controller
 {
         /**
     * index
@@ -17,9 +17,9 @@ class DivisiController extends Controller
     */
     public function index(): View
     {
-        $data = Divisi::latest()->get();
+        $data = Jobs::latest()->get();
 
-        return view('backend.divisi.index', compact('data'));
+        return view('backend.jobs.index', compact('data'));
     }
 
 
@@ -30,7 +30,7 @@ class DivisiController extends Controller
     */
     public function create(): View
     {
-        return view('backend.divisi.add');
+        return view('backend.jobs.add');
     }
 
 
@@ -47,13 +47,11 @@ class DivisiController extends Controller
             'nama'  => ['required'],
         ]);
 
-        $divisi = new divisi;
- 
-        $divisi->nama = $validate['nama'];
- 
-        $divisi->save();
+        $jobs = new jobs;
+        $jobs->nama = $validate['nama'];
+        $jobs->save();
 
-        return redirect()->route('divisi.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('jobs.index')->with(['success' => 'Data Berhasil Disimpan!']);
 
     }
 
@@ -66,8 +64,8 @@ class DivisiController extends Controller
     */
     public function edit(string $id): View
     {
-        $data = Divisi::findOrFail($id);
-        return view('backend.divisi.edit', compact('data'));
+        $data = Jobs::findOrFail($id);
+        return view('backend.jobs.edit', compact('data'));
     }
 
 
@@ -84,13 +82,11 @@ class DivisiController extends Controller
             'nama'  => ['required'],
         ]);
 
-        $divisi = Divisi::find($id);
- 
-        $divisi->nama = $validate['nama'];
-        
-        $divisi->save();
+        $jobs = Jobs::find($id);
+        $jobs->nama = $validate['nama'];
+        $jobs->save();
 
-        return redirect()->route('divisi.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('jobs.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
 
@@ -102,8 +98,8 @@ class DivisiController extends Controller
     */
     public function destroy($id): RedirectResponse
     {
-        $divisi = Divisi::findOrFail($id);
-        $divisi->delete();
-        return redirect()->route('divisi.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        $jobs = Jobs::findOrFail($id);
+        $jobs->delete();
+        return redirect()->route('jobs.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

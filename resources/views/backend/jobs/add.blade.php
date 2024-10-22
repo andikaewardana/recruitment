@@ -5,11 +5,11 @@
 <div class="bg-body-light">
     <div class="content content-full">
         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-            <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Divisi</h1>
+            <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Jobs</h1>
             <nav class="flex-shrink-0 my-2 my-sm-0 ms-sm-3" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">Dashboard</li>
-                <li class="breadcrumb-item active" aria-current="page">Divisi</li>
+                <li class="breadcrumb-item active" aria-current="page">Jobs</li>
             </ol>
             </nav>
         </div>
@@ -20,12 +20,11 @@
 <!-- Page Content -->
 <div class="content">
 
-<form method="POST" action="{{ route('divisi.update', $data->id) }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('jobs.store') }}" enctype="multipart/form-data">
     @csrf
-    @method('PUT')
     <div class="block block-rounded">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Edit Divisi</h3>
+            <h3 class="block-title">Tambah Jobs</h3>
             <div class="block-options">
                 <button type="button" class="btn-block-option">
                 <i class="si si-settings"></i>
@@ -36,8 +35,8 @@
             <div class="row justify-content-center py-sm-3 py-md-5">
                 <div class="col-sm-10 col-md-8">
                     <div class="mb-4">
-                        <label class="form-label" for="block-form7-username">Nama Divisi</label>
-                        <input type="text" class="form-control form-control-alt" name="nama" value="{{ $data->nama }}" placeholder="Masukan Nama Divisi...">
+                        <label class="form-label" for="block-form7-username">Nama Jobs</label>
+                        <input type="text" class="form-control form-control-alt" name="nama" placeholder="Masukan Nama Jobs...">
                     </div>
                 </div>
             </div>
@@ -46,7 +45,7 @@
             <button type="submit" class="btn btn-sm btn-alt-primary">
                 <i class="fa fa-check opacity-50 me-1"></i> Submit
             </button>
-            <a href="{{ route('divisi.index') }}" class="btn btn-sm btn-alt-danger">
+            <a href="{{ route('jobs.index') }}" class="btn btn-sm btn-alt-danger">
                 <i class="fa fa-xmark opacity-50 me-1"></i> Cancel
             </a>
             <button type="reset" class="btn btn-sm btn-alt-secondary">
