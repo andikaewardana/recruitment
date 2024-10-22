@@ -40,16 +40,24 @@ class PenilaianController extends Controller
     *
     * @return View
     */
-    public function show($id): View
+    public function show(Request $request, $id)
     {
-        // get data engineer
-        // $engineer = DB::table('users')
-        //     ->join('kelas', 'users.divisi', '=', 'kelas.id')
-        //     ->select('users.name', 'kelas.id')
-        //     ->where('users.divisi', '=', auth()->user()->divisi)
-        //     ->get();
 
-        return view('backend.penilaian.detail');
+        if ($request->ajax()) {
+
+            $data = Penilaian::select('*')->where('id_jobs', $request->id)->orderBy('created_at', 'desc');
+            return DataTables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+       
+                        $btn = '<a href="'.route('penilaian.edit', $row->id).'" class="btn btn-sm btn-primary js-bs-tooltip-enabled"><i class="fa fa-pencil-alt"></i></a>';
+                        return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('backend.penilaian.detail', compact(['id']));
     }
 
 

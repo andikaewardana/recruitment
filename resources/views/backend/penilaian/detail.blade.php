@@ -66,23 +66,106 @@
             var table = $('.data-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('penilaian.index') }}",
+                ajax: {
+                    url: "{{ route('penilaian.show', <?=$id?>) }}",
+                    // type: "POST",
+                    data: function (d) {
+                        d.id = <?=$id?>;
+                    }
+                },
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false},
-                    {data: 'nama', name: 'nama'},
-                    // {data: 'jenis', name: 'jenis'},
-                    // {data: 'masalah', name: 'masalah'},
-                    // {data: 'user', name: 'user'},
-                    // {data: null,
-                    //     render: function (data, type, row, meta) {
-                    //         if (row.status == 1) {
-                    //             return "<button type='button' class='btn btn-success'>Selesai</button>";
-                    //         } else {
-                    //             return "<button type='button' class='btn btn-success'>Belum Selesai</button>";
-                    //         }
-                    //     }
-                    // },
-                    // {data: 'engineer', name: 'engineer'},
+                    {data: 'nama_pelamar', name: 'nama_pelamar'},
+                    {data: 'data_pelamar',
+                        render: function (data, type, row, meta) {
+                            if (row.data_pelamar == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.data_pelamar == '0,8') {
+                                return "Baik";
+                            } else if (row.data_pelamar == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.data_pelamar == '0,4') {
+                                return "Buruk";
+                            } else if (row.data_pelamar == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'pendidikan',
+                        render: function (data, type, row, meta) {
+                            if (row.pendidikan == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.pendidikan == '0,8') {
+                                return "Baik";
+                            } else if (row.pendidikan == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.pendidikan == '0,4') {
+                                return "Buruk";
+                            } else if (row.pendidikan == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'pengalaman_kerja',
+                        render: function (data, type, row, meta) {
+                            if (row.pengalaman_kerja == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.pengalaman_kerja == '0,8') {
+                                return "Baik";
+                            } else if (row.pengalaman_kerja == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.pengalaman_kerja == '0,4') {
+                                return "Buruk";
+                            } else if (row.pengalaman_kerja == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'wawancara',
+                        render: function (data, type, row, meta) {
+                            if (row.wawancara == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.wawancara == '0,8') {
+                                return "Baik";
+                            } else if (row.wawancara == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.wawancara == '0,4') {
+                                return "Buruk";
+                            } else if (row.wawancara == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'test_skill',
+                        render: function (data, type, row, meta) {
+                            if (row.test_skill == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.test_skill == '0,8') {
+                                return "Baik";
+                            } else if (row.test_skill == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.test_skill == '0,4') {
+                                return "Buruk";
+                            } else if (row.test_skill == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'psikotest',
+                        render: function (data, type, row, meta) {
+                            if (row.psikotest == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.psikotest == '0,8') {
+                                return "Baik";
+                            } else if (row.psikotest == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.psikotest == '0,4') {
+                                return "Buruk";
+                            } else if (row.psikotest == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

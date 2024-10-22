@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\Backend\DivisiController;
-use App\Http\Controllers\Backend\ReportController;
+use App\Http\Controllers\Backend\JobsController;
+use App\Http\Controllers\Backend\PenilaianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,10 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middl
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index')->middleware('auth');
-Route::resource('/report', ReportController::class)->middleware('auth');
+Route::resource('/jobs', JobsController::class)->middleware('auth');
+Route::resource('/penilaian', PenilaianController::class)->middleware('auth');
+Route::get('/get_penilaian', [PenilaianController::class, 'get_penilaian'])->middleware('auth');
+
 
 
 /*
@@ -35,7 +38,7 @@ Route::resource('/report', ReportController::class)->middleware('auth');
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     
     Route::resource('/user', UserController::class);
-    Route::resource('/divisi', DivisiController::class);
+    // Route::resource('/divisi', DivisiController::class);
     
 });
 

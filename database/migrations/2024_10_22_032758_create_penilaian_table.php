@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('penilaian', function (Blueprint $table) {
             $table->id();
             $table->integer('id_jobs');
-            $table->json('nilai_pelamar');
+            $table->string('nama_pelamar');
+            $table->string('data_pelamar');
+            $table->string('pendidikan');
+            $table->string('pengalaman_kerja');
+            $table->string('wawancara');
+            $table->string('test_skill');
+            $table->string('psikotest');
             $table->double('nilai_akhir')->nullable();
-            // $table->text('masalah');
-            // $table->text('solusi')->nullable();
-            // $table->string('user');
-            // $table->integer('status');
-            // $table->string('engineer');
             $table->timestamps();
         });
     }
