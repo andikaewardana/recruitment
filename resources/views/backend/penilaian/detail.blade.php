@@ -287,6 +287,25 @@
             table = $('.data-table').DataTable({
                 processing: true,
                 serverSide: true,
+<<<<<<< HEAD
+                ajax: "{{ route('penilaian.index') }}",
+                columns: [
+                    {data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false},
+                    {data: 'nama', name: 'nama'},
+                    // {data: 'jenis', name: 'jenis'},
+                    // {data: 'masalah', name: 'masalah'},
+                    // {data: 'user', name: 'user'},
+                    // {data: null,
+                    //     render: function (data, type, row, meta) {
+                    //         if (row.status == 1) {
+                    //             return "<button type='button' class='btn btn-success'>Selesai</button>";
+                    //         } else {
+                    //             return "<button type='button' class='btn btn-success'>Belum Selesai</button>";
+                    //         }
+                    //     }
+                    // },
+                    // {data: 'engineer', name: 'engineer'},
+=======
                 ajax: {
                     url: "{{ route('penilaian.show', <?=$id?>) }}",
                     // type: "POST",
@@ -387,6 +406,7 @@
                             }
                         }
                     },
+>>>>>>> 2e08166689e9868067b5dead7608251d37583eba
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

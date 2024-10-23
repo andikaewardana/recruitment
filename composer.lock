@@ -6371,6 +6371,18 @@
         },
         {
             "name": "laravel/sail",
+<<<<<<< HEAD
+            "version": "v1.36.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sail.git",
+                "reference": "f184d3d687155d06bc8cb9ff6dc48596a138460c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/f184d3d687155d06bc8cb9ff6dc48596a138460c",
+                "reference": "f184d3d687155d06bc8cb9ff6dc48596a138460c",
+=======
             "version": "v1.37.0",
             "source": {
                 "type": "git",
@@ -6381,6 +6393,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/5d385f2e698f0f774cdead82aff5d989fb95309b",
                 "reference": "5d385f2e698f0f774cdead82aff5d989fb95309b",
+>>>>>>> 2e08166689e9868067b5dead7608251d37583eba
                 "shasum": ""
             },
             "require": {
@@ -6430,7 +6443,11 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
+<<<<<<< HEAD
+            "time": "2024-10-10T13:26:02+00:00"
+=======
             "time": "2024-10-21T17:13:38+00:00"
+>>>>>>> 2e08166689e9868067b5dead7608251d37583eba
         },
         {
             "name": "mockery/mockery",
@@ -8631,12 +8648,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
