@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('penilaian', function (Blueprint $table) {
             $table->id();
             $table->integer('id_jobs');
+<<<<<<< HEAD
             $table->json('nilai_pelamar');
             $table->double('nilai_akhir')->nullable();
             // $table->text('masalah');
@@ -21,6 +22,16 @@ return new class extends Migration
             // $table->string('user');
             // $table->integer('status');
             // $table->string('engineer');
+=======
+            $table->string('nama_pelamar');
+            $table->string('data_pelamar');
+            $table->string('pendidikan');
+            $table->string('pengalaman_kerja');
+            $table->string('wawancara');
+            $table->string('test_skill');
+            $table->string('psikotest');
+            $table->double('nilai_akhir')->nullable();
+>>>>>>> 2e08166689e9868067b5dead7608251d37583eba
             $table->timestamps();
         });
     }

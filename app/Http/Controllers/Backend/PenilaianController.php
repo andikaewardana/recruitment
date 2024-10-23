@@ -40,6 +40,7 @@ class PenilaianController extends Controller
     *
     * @return View
     */
+<<<<<<< HEAD
     public function show($id): View
     {
         // get data engineer
@@ -50,6 +51,26 @@ class PenilaianController extends Controller
         //     ->get();
 
         return view('backend.penilaian.detail');
+=======
+    public function show(Request $request, $id)
+    {
+
+        if ($request->ajax()) {
+
+            $data = Penilaian::select('*')->where('id_jobs', $request->id)->orderBy('created_at', 'desc');
+            return DataTables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+       
+                        $btn = '<a href="'.route('penilaian.edit', $row->id).'" class="btn btn-sm btn-primary js-bs-tooltip-enabled"><i class="fa fa-pencil-alt"></i></a>';
+                        return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('backend.penilaian.detail', compact(['id']));
+>>>>>>> 2e08166689e9868067b5dead7608251d37583eba
     }
 
 

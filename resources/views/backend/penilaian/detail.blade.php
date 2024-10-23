@@ -66,6 +66,7 @@
             var table = $('.data-table').DataTable({
                 processing: true,
                 serverSide: true,
+<<<<<<< HEAD
                 ajax: "{{ route('penilaian.index') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false},
@@ -83,6 +84,108 @@
                     //     }
                     // },
                     // {data: 'engineer', name: 'engineer'},
+=======
+                ajax: {
+                    url: "{{ route('penilaian.show', <?=$id?>) }}",
+                    // type: "POST",
+                    data: function (d) {
+                        d.id = <?=$id?>;
+                    }
+                },
+                columns: [
+                    {data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false},
+                    {data: 'nama_pelamar', name: 'nama_pelamar'},
+                    {data: 'data_pelamar',
+                        render: function (data, type, row, meta) {
+                            if (row.data_pelamar == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.data_pelamar == '0,8') {
+                                return "Baik";
+                            } else if (row.data_pelamar == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.data_pelamar == '0,4') {
+                                return "Buruk";
+                            } else if (row.data_pelamar == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'pendidikan',
+                        render: function (data, type, row, meta) {
+                            if (row.pendidikan == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.pendidikan == '0,8') {
+                                return "Baik";
+                            } else if (row.pendidikan == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.pendidikan == '0,4') {
+                                return "Buruk";
+                            } else if (row.pendidikan == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'pengalaman_kerja',
+                        render: function (data, type, row, meta) {
+                            if (row.pengalaman_kerja == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.pengalaman_kerja == '0,8') {
+                                return "Baik";
+                            } else if (row.pengalaman_kerja == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.pengalaman_kerja == '0,4') {
+                                return "Buruk";
+                            } else if (row.pengalaman_kerja == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'wawancara',
+                        render: function (data, type, row, meta) {
+                            if (row.wawancara == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.wawancara == '0,8') {
+                                return "Baik";
+                            } else if (row.wawancara == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.wawancara == '0,4') {
+                                return "Buruk";
+                            } else if (row.wawancara == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'test_skill',
+                        render: function (data, type, row, meta) {
+                            if (row.test_skill == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.test_skill == '0,8') {
+                                return "Baik";
+                            } else if (row.test_skill == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.test_skill == '0,4') {
+                                return "Buruk";
+                            } else if (row.test_skill == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+                    {data: 'psikotest',
+                        render: function (data, type, row, meta) {
+                            if (row.psikotest == '1,0') {
+                                return "Sangat Baik";
+                            } else if (row.psikotest == '0,8') {
+                                return "Baik";
+                            } else if (row.psikotest == '0,6') {
+                                return "Cukup Baik";
+                            } else if (row.psikotest == '0,4') {
+                                return "Buruk";
+                            } else if (row.psikotest == '0,2') {
+                                return "Sangat Buruk";
+                            }
+                        }
+                    },
+>>>>>>> 2e08166689e9868067b5dead7608251d37583eba
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
