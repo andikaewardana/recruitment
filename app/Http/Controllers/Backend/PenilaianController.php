@@ -40,18 +40,6 @@ class PenilaianController extends Controller
     *
     * @return View
     */
-<<<<<<< HEAD
-    public function show($id): View
-    {
-        // get data engineer
-        // $engineer = DB::table('users')
-        //     ->join('kelas', 'users.divisi', '=', 'kelas.id')
-        //     ->select('users.name', 'kelas.id')
-        //     ->where('users.divisi', '=', auth()->user()->divisi)
-        //     ->get();
-
-        return view('backend.penilaian.detail');
-=======
     public function show(Request $request, $id)
     {
 
@@ -71,7 +59,6 @@ class PenilaianController extends Controller
         }
 
         return view('backend.penilaian.detail', compact(['id']));
->>>>>>> 2e08166689e9868067b5dead7608251d37583eba
     }
 
 
