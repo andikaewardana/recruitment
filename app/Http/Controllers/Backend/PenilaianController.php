@@ -50,8 +50,9 @@ class PenilaianController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
        
-                        $btn = '<a href="'.route('penilaian.edit', $row->id).'" class="btn btn-sm btn-primary js-bs-tooltip-enabled"><i class="fa fa-pencil-alt"></i></a>';
+                        $btn = '<button type="button" id="detailPenilaian" class="btn btn-sm btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="modalPenilaian()"><i class="fa fa-pencil-alt"></i></button>';
                         return $btn;
+
                     })
                     ->rawColumns(['action'])
                     ->make(true);
@@ -67,36 +68,29 @@ class PenilaianController extends Controller
      * @param  mixed $request
      * @return RedirectResponse
      */
-    // public function store(Request $request): RedirectResponse
-    // {
+    public function update(Request $request, $id): RedirectResponse
+    {
 
-    //     // validate data from request object before storing it in database table
-    //     $validate = $request->validate([
-    //         'tanggal'               => ['required'],
-    //         'jenis'                 => ['required'],
-    //         'masalah'               => ['required'],
-    //         'uraian-permasalahan'   => ['required'],
-    //         'solusi'                => ['required'],
-    //         'keterangan'            => ['required'],
-    //         'user'                  => ['required'],
-    //         'status'                => ['required'],
-    //         'engineer'              => ['required'],
-    //     ]);
+        // validate data from request object before storing it in database table
+        $validate = $request->validate([
+            'data_pelamar'      => ['required'],
+            'pendidikan'        => ['required'],
+            'pengalaman_kerja'  => ['required'],
+            'seleksi_wawancara' => ['required'],
+            'test_skill'        => ['required'],
+            'seleksi_psikotest' => ['required'],
+        ]);
 
-    //     // insert data into database table
-    //     Report_it::create([
-    //         'tanggal'               => $validate['tanggal'], 
-    //         'jenis'                 => $validate['jenis'],
-    //         'masalah'               => $validate['masalah'],
-    //         'uraian_permasalahan'   => $validate['uraian-permasalahan'],
-    //         'solusi'                => $validate['solusi'],
-    //         'keterangan'            => $validate['keterangan'],
-    //         'user'                  => $validate['user'],
-    //         'status'                => $validate['status'],
-    //         'engineer'              => implode( ',', $validate['engineer'] ),
-    //     ]);
+        $penilaian = Penilaian::find($id);
+        $penilaian->data_pelamar        = $validate['data_pelamar'];
+        $penilaian->pendidikan          = $validate['pendidikan'];
+        $penilaian->pengalaman_kerja    = $validate['pengalaman_kerja'];
+        $penilaian->wawancara           = $validate['seleksi_wawancara'];
+        $penilaian->test_skill          = $validate['test_skill'];
+        $penilaian->psikotest           = $validate['seleksi_psikotest'];
+        $penilaian->save();
 
-    //     return redirect()->route('report.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('penilaian.show', $id)->with(['success' => 'Data Berhasil Diubah!']);
 
-    // }
+    }
 }
