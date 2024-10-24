@@ -26,7 +26,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middl
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index')->middleware('auth');
 Route::resource('/jobs', JobsController::class)->middleware('auth');
 Route::resource('/penilaian', PenilaianController::class)->middleware('auth');
-// Route::get('/get_penilaian', [PenilaianController::class, 'get_penilaian'])->middleware('auth');
+Route::post('/calculate', [PenilaianController::class, 'calculate'])->name('penilaian.calculate')->middleware('auth');
 
 
 

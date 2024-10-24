@@ -23,11 +23,12 @@
 <div class="block block-rounded">
     <div class="block-header block-header-default">
         <h3 class="block-title">Tabel Pelamar</h3>
+        <!-- <a href="#" class="btn btn-primary"></a> -->
         <div class="block-options">
             <div class="block-options-item">
-                <!-- <a href="{{ route('penilaian.create') }}" class="btn btn-success me-1 mb-3">
-                    <i class="fa fa-fw fa-plus me-1"></i> Tambah Penilaian
-                </a> -->
+                <a href="javascript:;" class="btn btn-success me-1 mb-3" id="kalkulasiPenilaian">
+                    <i class="fa fa-fw fa-plus me-1"></i> Kalkulasi Penilaian
+                </a>
             </div>
         </div>
     </div>
@@ -57,7 +58,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="POST" action="{{ route('penilaian.update', $id) }}" enctype="multipart/form-data">
@@ -399,8 +400,6 @@
                 var tr = $(this).closest('tr');
                 var row = table.row(tr).data();
 
-                console.log(row);
-
                 var dataPelamar = document.getElementsByName('data_pelamar');
                 for (var dataPelamar1 of dataPelamar) {
                     if (dataPelamar1.value === row.data_pelamar) {
@@ -449,12 +448,60 @@
                     }
                 }
 
+                $('#exampleModalLabel').html(row.nama_pelamar)
+
             });
 
             $('#modalPenilaian').modal('show');
-            // var data = $('.data-table').DataTable().row(this).data();
-            // console.log(data);
 
         };
+
+        $('#kalkulasiPenilaian').on('click', function(e) {
+            e.preventDefault();
+            let token   = $("meta[name='csrf-token']").attr("content");
+            $.ajax({
+                type: "post",
+                url: "{{ route('penilaian.calculate') }}",
+                data: {
+                    id: <?= $id ?>,
+                    "_token": token
+                },
+                // beforeSend: function () {
+                //     Swal.fire({
+                //     icon: "info",update
+                //     title: "Mohon Tunggu !",
+                //     html: "Sedang SImpan Data...",
+                //     target: document.getElementById("addInvoice"),
+                //     allowOutsideClick: false,
+                //     showConfirmButton: false,
+                //     onBeforeOpen: () => {
+                //         Swal.showLoading();
+                //     },
+                //     });
+                // },
+                success: function (a) {
+                    console.log(a)
+                    // Swal.fire({
+                    // icon: "success",
+                    // title: "Success!!",
+                    // text: a.message,
+                    // });
+                    // idata.ajax.reload(null, false);
+                    // $("#addInvoice").modal("hide");
+                    // $("#selectOrder").empty();
+                    // $(".periode-kontrak").remove();
+                    // $("#form_invoice").trigger("reset");
+                },
+                error: function (a) {
+                    // Swal.fire({
+                    // icon: "error",
+                    // title: "Error!!",
+                    // target: document.getElementById("addInvoice"),
+                    // text: a.responseJSON.message,
+                    // });
+                },
+            });
+        });
+
     </script>
 @endsection

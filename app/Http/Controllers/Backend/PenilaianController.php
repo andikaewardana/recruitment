@@ -68,9 +68,8 @@ class PenilaianController extends Controller
      * @param  mixed $request
      * @return RedirectResponse
      */
-    public function update(Request $request, $id): RedirectResponse
+    public function update(Request $request, $id)
     {
-
         // validate data from request object before storing it in database table
         $validate = $request->validate([
             'data_pelamar'      => ['required'],
@@ -92,5 +91,11 @@ class PenilaianController extends Controller
 
         return redirect()->route('penilaian.show', $id)->with(['success' => 'Data Berhasil Diubah!']);
 
+    }
+
+    public function calculate(Request $request) {
+        // dd($request->id);
+        $penilaian = Penilaian::where('id_jobs', $request->id)->get();
+        dd($penilaian[0]['id']);
     }
 }
