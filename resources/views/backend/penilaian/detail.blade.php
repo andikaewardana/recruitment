@@ -68,31 +68,31 @@
                     <div class="mb-4">
                         <label class="mb-2">1. Data Pelamar</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="data_pelamar" value="1,0" id="dataPelamar1">
+                            <input class="form-check-input" type="radio" name="data_pelamar" value="1.0" id="dataPelamar1">
                             <label class="form-check-label" for="dataPelamar1">
                                 Sangat Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="data_pelamar" value="0,8" id="dataPelamar2">
+                            <input class="form-check-input" type="radio" name="data_pelamar" value="0.8" id="dataPelamar2">
                             <label class="form-check-label" for="dataPelamar2">
                                 Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="data_pelamar" value="0,6" id="dataPelamar3">
+                            <input class="form-check-input" type="radio" name="data_pelamar" value="0.6" id="dataPelamar3">
                             <label class="form-check-label" for="dataPelamar3">
                                 Cukup Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="data_pelamar" value="0,4" id="dataPelamar4">
+                            <input class="form-check-input" type="radio" name="data_pelamar" value="0.4" id="dataPelamar4">
                             <label class="form-check-label" for="dataPelamar4">
                                 Kurang Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="data_pelamar" value="0,2" id="dataPelamar5">
+                            <input class="form-check-input" type="radio" name="data_pelamar" value="0.2" id="dataPelamar5">
                             <label class="form-check-label" for="dataPelamar5">
                                 Sangat Kurang Baik
                             </label>
@@ -101,31 +101,31 @@
                     <div class="mb-4">
                         <label class="mb-2">2. Pendidikan</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pendidikan" value="1,0" id="pendidikan1">
+                            <input class="form-check-input" type="radio" name="pendidikan" value="1.0" id="pendidikan1">
                             <label class="form-check-label" for="pendidikan1">
                                 Sangat Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pendidikan" value="0,8" id="pendidikan2">
+                            <input class="form-check-input" type="radio" name="pendidikan" value="0.8" id="pendidikan2">
                             <label class="form-check-label" for="pendidikan2">
                                 Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pendidikan" value="0,6" id="pendidikan3">
+                            <input class="form-check-input" type="radio" name="pendidikan" value="0.6" id="pendidikan3">
                             <label class="form-check-label" for="pendidikan3">
                                 Cukup Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pendidikan" value="0,4" id="pendidikan4">
+                            <input class="form-check-input" type="radio" name="pendidikan" value="0.4" id="pendidikan4">
                             <label class="form-check-label" for="pendidikan4">
                                 Kurang Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pendidikan" value="0,2" id="pendidikan5">
+                            <input class="form-check-input" type="radio" name="pendidikan" value="0.2" id="pendidikan5">
                             <label class="form-check-label" for="pendidikan5">
                                 Sangat Kurang Baik
                             </label>
@@ -134,31 +134,31 @@
                     <div class="mb-4">
                         <label class="mb-2">3. Pengalaman Kerja</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="1,0" id="pengalamanKerja1">
+                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="1.0" id="pengalamanKerja1">
                             <label class="form-check-label" for="pengalamanKerja1">
                                 Sangat Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="0,8" id="pengalamanKerja2">
+                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="0.8" id="pengalamanKerja2">
                             <label class="form-check-label" for="pengalamanKerja2">
                                 Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="0,6" id="pengalamanKerja3">
+                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="0.6" id="pengalamanKerja3">
                             <label class="form-check-label" for="pengalamanKerja3">
                                 Cukup Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="0,4" id="pengalamanKerja4">
+                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="0.4" id="pengalamanKerja4">
                             <label class="form-check-label" for="pengalamanKerja4">
                                 Kurang Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="0,2" id="pengalamanKerja5">
+                            <input class="form-check-input" type="radio" name="pengalaman_kerja" value="0.2" id="pengalamanKerja5">
                             <label class="form-check-label" for="pengalamanKerja5">
                                 Sangat Kurang Baik
                             </label>
@@ -167,31 +167,31 @@
                     <div class="mb-4">
                         <label class="mb-2">4. Seleksi Wawancara</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="1,0" id="seleksiWawancara1">
+                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="1.0" id="seleksiWawancara1">
                             <label class="form-check-label" for="seleksiWawancara1">
                                 Sangat Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="0,8" id="seleksiWawancara2">
+                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="0.8" id="seleksiWawancara2">
                             <label class="form-check-label" for="seleksiWawancara2">
                                 Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="0,6" id="seleksiWawancara3">
+                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="0.6" id="seleksiWawancara3">
                             <label class="form-check-label" for="seleksiWawancara3">
                                 Cukup Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="0,4" id="seleksiWawancara4">
+                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="0.4" id="seleksiWawancara4">
                             <label class="form-check-label" for="seleksiWawancara4">
                                 Kurang Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="0,2" id="seleksiWawancara5">
+                            <input class="form-check-input" type="radio" name="seleksi_wawancara" value="0.2" id="seleksiWawancara5">
                             <label class="form-check-label" for="seleksiWawancara5">
                                 Sangat Kurang Baik
                             </label>
@@ -200,31 +200,31 @@
                     <div class="mb-4">
                         <label class="mb-2">5. Test Skill</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="test_skill" value="1,0" id="testSkill1">
+                            <input class="form-check-input" type="radio" name="test_skill" value="1.0" id="testSkill1">
                             <label class="form-check-label" for="testSkill1">
                                 Sangat Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="test_skill" value="0,8" id="testSkill2">
+                            <input class="form-check-input" type="radio" name="test_skill" value="0.8" id="testSkill2">
                             <label class="form-check-label" for="testSkill2">
                                 Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="test_skill" value="0,6" id="testSkill3">
+                            <input class="form-check-input" type="radio" name="test_skill" value="0.6" id="testSkill3">
                             <label class="form-check-label" for="testSkill3">
                                 Cukup Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="test_skill" value="0,4" id="testSkill4">
+                            <input class="form-check-input" type="radio" name="test_skill" value="0.4" id="testSkill4">
                             <label class="form-check-label" for="testSkill4">
                                 Kurang Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="test_skill" value="0,2" id="testSkill5">
+                            <input class="form-check-input" type="radio" name="test_skill" value="0.2" id="testSkill5">
                             <label class="form-check-label" for="testSkill5">
                                 Sangat Kurang Baik
                             </label>
@@ -233,31 +233,31 @@
                     <div class="mb-4">
                         <label class="mb-2">6. Seleksi Psikotest</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="1,0" id="seleksiPsikotest1">
+                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="1.0" id="seleksiPsikotest1">
                             <label class="form-check-label" for="seleksiPsikotest1">
                                 Sangat Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="0,8" id="seleksiPsikotest2">
+                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="0.8" id="seleksiPsikotest2">
                             <label class="form-check-label" for="seleksiPsikotest2">
                                 Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="0,6" id="seleksiPsikotest3">
+                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="0.6" id="seleksiPsikotest3">
                             <label class="form-check-label" for="seleksiPsikotest3">
                                 Cukup Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="0,4" id="seleksiPsikotest4">
+                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="0.4" id="seleksiPsikotest4">
                             <label class="form-check-label" for="seleksiPsikotest4">
                                 Kurang Baik
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="0,2" id="seleksiPsikotest5">
+                            <input class="form-check-input" type="radio" name="seleksi_psikotest" value="0.2" id="seleksiPsikotest5">
                             <label class="form-check-label" for="seleksiPsikotest5">
                                 Sangat Kurang Baik
                             </label>
@@ -290,7 +290,6 @@
                 serverSide: true,
                 ajax: {
                     url: "{{ route('penilaian.show', <?=$id?>) }}",
-                    // type: "POST",
                     data: function (d) {
                         d.id = <?=$id?>;
                     }
@@ -300,90 +299,90 @@
                     {data: 'nama_pelamar', name: 'nama_pelamar'},
                     {data: 'data_pelamar',
                         render: function (data, type, row, meta) {
-                            if (row.data_pelamar == '1,0') {
+                            if (row.data_pelamar == '1.0') {
                                 return "Sangat Baik";
-                            } else if (row.data_pelamar == '0,8') {
+                            } else if (row.data_pelamar == '0.8') {
                                 return "Baik";
-                            } else if (row.data_pelamar == '0,6') {
+                            } else if (row.data_pelamar == '0.6') {
                                 return "Cukup Baik";
-                            } else if (row.data_pelamar == '0,4') {
+                            } else if (row.data_pelamar == '0.4') {
                                 return "Kurang Baik";
-                            } else if (row.data_pelamar == '0,2') {
+                            } else if (row.data_pelamar == '0.2') {
                                 return "Sangat Kurang Baik";
                             }
                         }
                     },
                     {data: 'pendidikan',
                         render: function (data, type, row, meta) {
-                            if (row.pendidikan == '1,0') {
+                            if (row.pendidikan == '1.0') {
                                 return "Sangat Baik";
-                            } else if (row.pendidikan == '0,8') {
+                            } else if (row.pendidikan == '0.8') {
                                 return "Baik";
-                            } else if (row.pendidikan == '0,6') {
+                            } else if (row.pendidikan == '0.6') {
                                 return "Cukup Baik";
-                            } else if (row.pendidikan == '0,4') {
+                            } else if (row.pendidikan == '0.4') {
                                 return "Kurang Baik";
-                            } else if (row.pendidikan == '0,2') {
+                            } else if (row.pendidikan == '0.2') {
                                 return "Sangat Kurang Baik";
                             }
                         }
                     },
                     {data: 'pengalaman_kerja',
                         render: function (data, type, row, meta) {
-                            if (row.pengalaman_kerja == '1,0') {
+                            if (row.pengalaman_kerja == '1.0') {
                                 return "Sangat Baik";
-                            } else if (row.pengalaman_kerja == '0,8') {
+                            } else if (row.pengalaman_kerja == '0.8') {
                                 return "Baik";
-                            } else if (row.pengalaman_kerja == '0,6') {
+                            } else if (row.pengalaman_kerja == '0.6') {
                                 return "Cukup Baik";
-                            } else if (row.pengalaman_kerja == '0,4') {
+                            } else if (row.pengalaman_kerja == '0.4') {
                                 return "Kurang Baik";
-                            } else if (row.pengalaman_kerja == '0,2') {
+                            } else if (row.pengalaman_kerja == '0.2') {
                                 return "Sangat Kurang Baik";
                             }
                         }
                     },
                     {data: 'wawancara',
                         render: function (data, type, row, meta) {
-                            if (row.wawancara == '1,0') {
+                            if (row.wawancara == '1.0') {
                                 return "Sangat Baik";
-                            } else if (row.wawancara == '0,8') {
+                            } else if (row.wawancara == '0.8') {
                                 return "Baik";
-                            } else if (row.wawancara == '0,6') {
+                            } else if (row.wawancara == '0.6') {
                                 return "Cukup Baik";
-                            } else if (row.wawancara == '0,4') {
+                            } else if (row.wawancara == '0.4') {
                                 return "Kurang Baik";
-                            } else if (row.wawancara == '0,2') {
+                            } else if (row.wawancara == '0.2') {
                                 return "Sangat Kurang Baik";
                             }
                         }
                     },
                     {data: 'test_skill',
                         render: function (data, type, row, meta) {
-                            if (row.test_skill == '1,0') {
+                            if (row.test_skill == '1.0') {
                                 return "Sangat Baik";
-                            } else if (row.test_skill == '0,8') {
+                            } else if (row.test_skill == '0.8') {
                                 return "Baik";
-                            } else if (row.test_skill == '0,6') {
+                            } else if (row.test_skill == '0.6') {
                                 return "Cukup Baik";
-                            } else if (row.test_skill == '0,4') {
+                            } else if (row.test_skill == '0.4') {
                                 return "Kurang Baik";
-                            } else if (row.test_skill == '0,2') {
+                            } else if (row.test_skill == '0.2') {
                                 return "Sangat Kurang Baik";
                             }
                         }
                     },
                     {data: 'psikotest',
                         render: function (data, type, row, meta) {
-                            if (row.psikotest == '1,0') {
+                            if (row.psikotest == '1.0') {
                                 return "Sangat Baik";
-                            } else if (row.psikotest == '0,8') {
+                            } else if (row.psikotest == '0.8') {
                                 return "Baik";
-                            } else if (row.psikotest == '0,6') {
+                            } else if (row.psikotest == '0.6') {
                                 return "Cukup Baik";
-                            } else if (row.psikotest == '0,4') {
+                            } else if (row.psikotest == '0.4') {
                                 return "Kurang Baik";
-                            } else if (row.psikotest == '0,2') {
+                            } else if (row.psikotest == '0.2') {
                                 return "Sangat Kurang Baik";
                             }
                         }
@@ -466,21 +465,8 @@
                     id: <?= $id ?>,
                     "_token": token
                 },
-                // beforeSend: function () {
-                //     Swal.fire({
-                //     icon: "info",update
-                //     title: "Mohon Tunggu !",
-                //     html: "Sedang SImpan Data...",
-                //     target: document.getElementById("addInvoice"),
-                //     allowOutsideClick: false,
-                //     showConfirmButton: false,
-                //     onBeforeOpen: () => {
-                //         Swal.showLoading();
-                //     },
-                //     });
-                // },
-                success: function (a) {
-                    console.log(a)
+                success: function (data) {
+                    // console.log(a)
                     // Swal.fire({
                     // icon: "success",
                     // title: "Success!!",
@@ -491,14 +477,6 @@
                     // $("#selectOrder").empty();
                     // $(".periode-kontrak").remove();
                     // $("#form_invoice").trigger("reset");
-                },
-                error: function (a) {
-                    // Swal.fire({
-                    // icon: "error",
-                    // title: "Error!!",
-                    // target: document.getElementById("addInvoice"),
-                    // text: a.responseJSON.message,
-                    // });
                 },
             });
         });

@@ -94,8 +94,85 @@ class PenilaianController extends Controller
     }
 
     public function calculate(Request $request) {
-        // dd($request->id);
+
+        // declare bobot
+        $bobot = [
+            'Data Pelamar' => 0.8,
+            'Pendidikan' => 0.6,
+            'Wawancara' => 0.6,
+            'Pengalaman Kerja' => 0.8,
+            'Test Skill' => 0.8,
+            'Psikotest' => 0.8,
+        ];
+
+
+        // untuk mendapatkan nilai pelamar
         $penilaian = Penilaian::where('id_jobs', $request->id)->get();
-        dd($penilaian[0]['id']);
+        $pelamar = [];
+        foreach ($penilaian as $index => $nilai) {
+            $pelamar[$nilai->id] = [
+                $nilai->data_pelamar,
+                $nilai->pendidikan,
+                $nilai->wawancara,
+                $nilai->pengalaman_kerja,
+                $nilai->test_skill,
+                $nilai->psikotest,
+            ];
+        }
+
+        // Menghitung nilai tertinggi untuk setiap kriteria
+        $nilai_tertinggi = [];
+
+        // Inisialisasi array untuk menyimpan nilai tertinggi
+        foreach ($bobot as $k => $v) {
+            $nilai_tertinggi[$k] = 0; // Set nilai tertinggi awal ke 0
+        }
+
+        // Mencari nilai tertinggi
+        foreach ($pelamar as $nama => $nilai) {
+            foreach ($bobot as $k => $v) {
+                $index = array_search($k, array_keys($bobot)); // Mendapatkan index kriteria
+                if ($nilai[$index] > $nilai_tertinggi[$k]) {
+                    $nilai_tertinggi[$k] = $nilai[$index]; // Update nilai tertinggi
+                }
+            }
+        }
+
+        // Menghitung Matrix R
+        $matrixR = [];
+        foreach ($pelamar as $nama => $nilai) {
+            $matrixR[$nama] = [];
+            foreach ($nilai as $kriteria => $nilaiPelamar) {
+                $kunciKriteria = array_keys($nilai_tertinggi)[$kriteria];
+                $matrixR[$nama][$kunciKriteria] = $nilaiPelamar / $nilai_tertinggi[$kunciKriteria];
+            }
+        }
+
+        // Menghitung Matrix R * Bobot
+        $total_nilai = [];
+        foreach ($matrixR as $nama => $nilai) {
+            $total = 0;
+            foreach ($nilai as $kriteria => $matrixValue) {
+                // Menghitung hasil Matrix R * Bobot
+                $total += $matrixValue * $bobot[$kriteria];
+            }
+            $total_nilai[$nama] = round($total, 1);
+        }
+
+        foreach ($total_nilai as $nama => $nilai) {
+            $updateNilai = Penilaian::findOrFail($nama);
+            $updateNilai->update([
+                'nilai_akhir'      => $nilai,
+            ]);
+        }
+
+        $nilaiTinggi = Penilaian::select('nama_pelamar')->where('id_jobs', $request->id)->orderBy('nilai_akhir', 'DESC')->get();
+        $skillTinggi = Penilaian::select('nama_pelamar')->where('id_jobs', $request->id)->orderBy('test_skill', 'DESC')->orderBy('nilai_akhir', 'DESC')->get();
+
+        return response()->json([
+            'nilaiTinggi' => $nilaiTinggi,
+            'skillTinggi' => $skillTinggi
+        ]);
+
     }
 }

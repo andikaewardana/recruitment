@@ -11,15 +11,15 @@ class Penilaian extends Model
 
     protected $table = 'penilaian';
 
-    // protected $fillable = [
-    //     'tanggal',
-    //     'jenis',
-    //     'masalah',
-    //     'uraian_permasalahan',
-    //     'solusi',
-    //     'keterangan',
-    //     'user',
-    //     'status',
-    //     'engineer',
-    // ];
+    protected $fillable = [
+        'id_jobs',
+        'nama_pelamar',
+        'data_pelamar',
+        'pendidikan',
+        'pengalaman_kerja',
+        'wawancara',
+        'test_skill',
+        'psikotest',
+        'nilai_akhir',
+    ];
 }
