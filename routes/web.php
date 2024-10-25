@@ -27,6 +27,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::resource('/jobs', JobsController::class)->middleware('auth');
 Route::resource('/penilaian', PenilaianController::class)->middleware('auth');
 Route::post('/calculate', [PenilaianController::class, 'calculate'])->name('penilaian.calculate')->middleware('auth');
+Route::post('/nilai_calculate', [PenilaianController::class, 'nilai_calculate'])->name('penilaian.nilai_calculate')->middleware('auth');
+Route::post('/skill_calculate', [PenilaianController::class, 'skill_calculate'])->name('penilaian.skill_calculate')->middleware('auth');
 
 
 

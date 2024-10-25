@@ -65,6 +65,7 @@
             @csrf
             @method('PUT')
                 <div class="modal-body">
+                    <input type="hidden" name="id_penilaian" id="idPenilaian">
                     <div class="mb-4">
                         <label class="mb-2">1. Data Pelamar</label>
                         <div class="form-check">
@@ -273,6 +274,44 @@
     </div>
 </div>
 
+<!-- Start Modal Modal Detail Pembayaran -->
+<div class="modal fade text-start" id="detailCalculate" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Detail Rangking Pelamar</h5>
+                <button class="btn-close" type="button"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">Pelamar Terbaik Berdasarkan Nilai Akhir</h3>
+                        </div>
+                        <div class="block-content">
+                            <table id="tabelDetailCalculate" class="table table-bordered table-striped" width="100%">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="block-header block-header-default">
+                            <h3 class="block-title">Pelamar Terbaik Berdasarkan Skill</h3>
+                        </div>
+                        <div class="block-content">
+                            <table id="tabelDetailCalculateSkill" class="table table-bordered table-striped" width="100%">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal Modal Detail Pembayaran -->
+
 </div>
 <!-- END Page Content -->
 
@@ -283,6 +322,9 @@
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script>
         var table = '';
+        var detailCalculate = null;
+        var detailCalculateSkill = null;
+
         $(function () {
             
             table = $('.data-table').DataTable({
@@ -447,7 +489,8 @@
                     }
                 }
 
-                $('#exampleModalLabel').html(row.nama_pelamar)
+                $('#exampleModalLabel').html('Edit Data ' + row.nama_pelamar)
+                $('#idPenilaian').val(row.id)
 
             });
 
@@ -466,19 +509,180 @@
                     "_token": token
                 },
                 success: function (data) {
-                    // console.log(a)
-                    // Swal.fire({
-                    // icon: "success",
-                    // title: "Success!!",
-                    // text: a.message,
-                    // });
-                    // idata.ajax.reload(null, false);
-                    // $("#addInvoice").modal("hide");
-                    // $("#selectOrder").empty();
-                    // $(".periode-kontrak").remove();
-                    // $("#form_invoice").trigger("reset");
+
+                    detailCalculate.ajax.reload(null, false);
+                    detailCalculateSkill.ajax.reload(null, false);
+
+                    $('#detailCalculate').modal('show');
+
                 },
             });
+
+            detailCalculate = $('#tabelDetailCalculate').DataTable({
+                "processing": true,
+                dom: 'Bfrtip',
+                "ajax": {  
+                    "headers": {
+                        "_token": token
+                    },
+                    "data": function (data) {
+                        delete data.columns;
+                        // Append to data
+                        data.id = <?= $id ?>;
+                        data._token = token
+                    },
+                    "url": "{{ route('penilaian.nilai_calculate') }}",
+                    "type": "POST"
+                },
+                // "deferRender": true,
+                "aLengthMenu": [
+                    [30, 40, 50],
+                    [30, 40, 50]
+                ],
+                "autoWidth": false,
+                // "responsive": true,
+                "serverside" : true,
+                // "scrollX" : true,
+                columnDefs: [{
+                    "defaultContent": "-",
+                    "targets": "_all"
+                }],
+                "columns": [
+                    {
+                        "render": function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        },
+                        "title": "No",
+                    },
+                    {
+                        "data": "nama_pelamar",
+                        "title": "Nama Pelamar",
+                    },
+                    // {
+                    //     "data": "nilai_pembayaran",
+                    //     "render": $.fn.dataTable.render.number(',', '.', 2, ''),
+                    //     "title": "Nilai Pembayaran",
+                    // },
+                    // {
+                    //     "data": "sisa_pembayaran",
+                    //     "render": $.fn.dataTable.render.number(',', '.', 2, ''),
+                    //     "title": "Sisa Pembayaran",
+                    // },
+                    // {
+                    //     "data": "tgl_pembayaran",
+                    //     "title": "Tanggal Pembayaran",
+                    // },
+                    // {
+                    //     "data": "keterangan",
+                    //     "title": "keterangan",
+                    // },
+                    // {
+                    //     "data": "nama_lengkap",
+                    //     "title": "Add By",
+                    //     "className" : "text-right"
+                    // },
+                    // {
+                    //     "data": "create_at",
+                    //     "title": "Add At",
+                    //     "className" : "text-center"
+                    // }
+                ],
+                // buttons: [
+                //     {
+                //         text: '<i class="fa fa-refresh"></i>',
+                //         action: () => {
+                //             detailCalculate.ajax.reload(null, false);
+                //         },
+                //         titleAttr: 'Refresh',
+                //     },
+                // ],
+            })
+
+            detailCalculateSkill = $('#tabelDetailCalculateSkill').DataTable({
+                "processing": true,
+                dom: 'Bfrtip',
+                "ajax": {  
+                    "headers": {
+                        "_token": token
+                    },
+                    "data": function (data) {
+                        delete data.columns;
+                        // Append to data
+                        data.id = <?= $id ?>;
+                        data._token = token
+                    },
+                    "url": "{{ route('penilaian.skill_calculate') }}",
+                    "type": "POST"
+                },
+                // "deferRender": true,
+                "aLengthMenu": [
+                    [30, 40, 50],
+                    [30, 40, 50]
+                ],
+                "autoWidth": false,
+                // "responsive": true,
+                "serverside" : true,
+                // "scrollX" : true,
+                columnDefs: [{
+                    "defaultContent": "-",
+                    "targets": "_all"
+                }],
+                "columns": [
+                    {
+                        "render": function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        },
+                        "title": "No",
+                    },
+                    {
+                        "data": "nama_pelamar",
+                        "title": "Nama Pelamar",
+                    },
+                    // {
+                    //     "data": "nilai_pembayaran",
+                    //     "render": $.fn.dataTable.render.number(',', '.', 2, ''),
+                    //     "title": "Nilai Pembayaran",
+                    // },
+                    // {
+                    //     "data": "sisa_pembayaran",
+                    //     "render": $.fn.dataTable.render.number(',', '.', 2, ''),
+                    //     "title": "Sisa Pembayaran",
+                    // },
+                    // {
+                    //     "data": "tgl_pembayaran",
+                    //     "title": "Tanggal Pembayaran",
+                    // },
+                    // {
+                    //     "data": "keterangan",
+                    //     "title": "keterangan",
+                    // },
+                    // {
+                    //     "data": "nama_lengkap",
+                    //     "title": "Add By",
+                    //     "className" : "text-right"
+                    // },
+                    // {
+                    //     "data": "create_at",
+                    //     "title": "Add At",
+                    //     "className" : "text-center"
+                    // }
+                ],
+                // buttons: [
+                //     {
+                //         text: '<i class="fa fa-refresh"></i>',
+                //         action: () => {
+                //             detailCalculateSkill.ajax.reload(null, false);
+                //         },
+                //         titleAttr: 'Refresh',
+                //     },
+                // ],
+            })
+
+        });
+
+        $('#detailCalculate').on('hidden.bs.modal', function () {
+            $('#detailCalculate').removeData('bs.modal');
+            location.reload();
         });
 
     </script>

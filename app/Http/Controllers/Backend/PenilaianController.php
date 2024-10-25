@@ -80,7 +80,7 @@ class PenilaianController extends Controller
             'seleksi_psikotest' => ['required'],
         ]);
 
-        $penilaian = Penilaian::find($id);
+        $penilaian = Penilaian::find($request->id_penilaian);
         $penilaian->data_pelamar        = $validate['data_pelamar'];
         $penilaian->pendidikan          = $validate['pendidikan'];
         $penilaian->pengalaman_kerja    = $validate['pengalaman_kerja'];
@@ -166,13 +166,24 @@ class PenilaianController extends Controller
             ]);
         }
 
-        $nilaiTinggi = Penilaian::select('nama_pelamar')->where('id_jobs', $request->id)->orderBy('nilai_akhir', 'DESC')->get();
-        $skillTinggi = Penilaian::select('nama_pelamar')->where('id_jobs', $request->id)->orderBy('test_skill', 'DESC')->orderBy('nilai_akhir', 'DESC')->get();
-
         return response()->json([
-            'nilaiTinggi' => $nilaiTinggi,
-            'skillTinggi' => $skillTinggi
+            'success' => 'Data Berhasil Dikalkulasi',
         ]);
 
     }
+
+    public function nilai_calculate(Request $request) {
+
+        $nilaiTinggi = Penilaian::select('nama_pelamar')->where('id_jobs', $request->id)->orderBy('nilai_akhir', 'DESC');
+
+        return Datatables::of($nilaiTinggi)->make(true);
+    }
+
+    public function skill_calculate(Request $request) {
+
+        $skillTinggi = Penilaian::select('nama_pelamar')->where('id_jobs', $request->id)->orderBy('test_skill', 'DESC')->orderBy('nilai_akhir', 'DESC');
+
+        return Datatables::of($skillTinggi)->make(true);
+    }
+
 }
